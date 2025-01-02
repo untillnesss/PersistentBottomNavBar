@@ -84,7 +84,6 @@ class MainScreen extends StatelessWidget {
                       showModalBottomSheet(
                         context: context,
                         backgroundColor: Colors.white,
-                        useRootNavigator: false,
                         builder: (final context) => Center(
                           child: ElevatedButton(
                             onPressed: () {
@@ -152,7 +151,7 @@ class MainScreen extends StatelessWidget {
                                   ?.call(NavBarStyle.values[index]),
                               style: const ButtonStyle(
                                   backgroundColor:
-                                      MaterialStatePropertyAll(Colors.teal)),
+                                      WidgetStatePropertyAll(Colors.teal)),
                               child: Text(
                                 NavBarStyle.values[index].name.toUpperCase(),
                                 style: const TextStyle(color: Colors.white),

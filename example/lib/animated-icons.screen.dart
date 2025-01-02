@@ -243,7 +243,6 @@ class _AnimatedIconScreenState extends State<AnimatedIconScreen>
           onWillPop: (final context) async {
             await showDialog(
               context: context ?? this.context,
-              useSafeArea: true,
               builder: (final context) => Container(
                 height: 50,
                 width: 50,

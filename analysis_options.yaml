@@ -155,6 +155,7 @@ analyzer:
     use_string_buffers: error
     unnecessary_import: error
     cascade_invocations: error
+    deprecated_member_use: ignore
 
 linter:
   rules:
