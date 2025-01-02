@@ -12,14 +12,14 @@ class _BottomNavStyle1 extends StatelessWidget {
       navBarEssentials.navBarHeight == 0
           ? const SizedBox.shrink()
           : AnimatedContainer(
-              width: isSelected ? 120 : 50,
+              width: isSelected ? 230 : 50,
               height: height! / 1.6,
               duration: navBarEssentials.itemAnimationProperties.duration,
               curve: navBarEssentials.itemAnimationProperties.curve,
               padding: EdgeInsets.all(item.contentPadding),
               decoration: BoxDecoration(
                 color: isSelected
-                    ? item.activeColorPrimary.withOpacity(0.2)
+                    ? const Color(0xffDCECCC)
                     : navBarEssentials.backgroundColor.withOpacity(0),
                 borderRadius: const BorderRadius.all(Radius.circular(50)),
               ),
@@ -37,8 +37,7 @@ class _BottomNavStyle1 extends StatelessWidget {
                           data: IconThemeData(
                               size: item.iconSize,
                               color: isSelected
-                                  ? (item.activeColorSecondary ??
-                                      item.activeColorPrimary)
+                                  ? const Color(0xff50A000)
                                   : item.inactiveColorPrimary ??
                                       item.activeColorPrimary),
                           child: isSelected
@@ -60,14 +59,13 @@ class _BottomNavStyle1 extends StatelessWidget {
                                   style: item.textStyle != null
                                       ? (item.textStyle!.apply(
                                           color: isSelected
-                                              ? (item.activeColorSecondary ??
-                                                  item.activeColorPrimary)
+                                              ? Colors.black
                                               : item.inactiveColorPrimary))
-                                      : TextStyle(
-                                          color: item.activeColorSecondary ??
-                                              item.activeColorPrimary,
+                                      : const TextStyle(
+                                          color: Colors.black,
                                           fontWeight: FontWeight.w400,
-                                          fontSize: 12),
+                                          fontSize: 12,
+                                        ),
                                 )),
                               ),
                             )
@@ -82,6 +80,10 @@ class _BottomNavStyle1 extends StatelessWidget {
       width: double.infinity,
       height: navBarEssentials.navBarHeight,
       padding: navBarEssentials.padding,
+      decoration: BoxDecoration(
+        color: const Color(0xffF3F3F4),
+        borderRadius: BorderRadius.circular(12),
+      ),
       child: Row(
         mainAxisAlignment: navBarEssentials.navBarItemsAlignment,
         children: navBarEssentials.items.map((final item) {
